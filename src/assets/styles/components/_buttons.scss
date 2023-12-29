@@ -1,0 +1,42 @@
+.btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-top: 0.8rem;
+    padding-bottom: 0.8rem;
+    border: 1px solid transparent;
+    transition: 0.3s all;
+
+    &--sm {
+        font-size: 0.8rem;
+        padding-left: 1.5rem;
+        padding-right: 1.5rem;
+    }
+    &--md {
+        font-size: 1rem;
+        padding-left: 3rem;
+        padding-right: 3rem;
+    }
+    &--lg {
+        font-size: 1.1rem;
+        padding-left: 5rem;
+        padding-right: 5rem;
+    }
+    &--primary {
+        color: $white !important;
+        background-color: $primary-main !important;
+        &:active,
+        &:focus,
+        &:hover {
+            color: $white;
+            background-color: $primary-main;
+        }
+        mat-spinner circle {
+            stroke: $white;
+        }
+    }
+
+    &--text {
+        color: $primary-main;
+    }
+}

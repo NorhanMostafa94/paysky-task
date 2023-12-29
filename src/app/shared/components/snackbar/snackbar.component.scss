@@ -1,0 +1,12 @@
+.snackbar-container {
+  @apply flex items-center justify-between leading-5;
+  &__content {
+    &-icon {
+      @apply text-white flex items-center;
+    }
+  }
+  .button-container {
+    flex-shrink: 0;
+    @apply -m-2;
+  }
+}

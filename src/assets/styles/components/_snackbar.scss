@@ -1,0 +1,13 @@
+@import "abstracts/variables";
+.mdc-snackbar {
+    &--failure {
+        .mdc-snackbar__surface {
+            background-color: $primary-dark !important;
+        }
+    }
+    &--success {
+        .mdc-snackbar__surface {
+            background-color: $secondary-dark !important;
+        }
+    }
+}

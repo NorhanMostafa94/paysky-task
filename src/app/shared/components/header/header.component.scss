@@ -1,0 +1,33 @@
+@import "abstracts/variables";
+
+.navbar {
+    min-height: 5rem;
+    &-nav {
+        .nav-item {
+            .nav-link {
+                position: relative;
+                &::after {
+                    content: "";
+                    position: absolute;
+                    bottom: 0;
+                    left: 0;
+                    height: 100%;
+                    width: 0%;
+                    border-bottom: 2px solid $primary-main;
+                    transition: 0.5s;
+                    transform-origin: top left;
+                }
+                &:hover {
+                    color: $primary-main;
+                    &::after {
+                        width: 100%;
+                    }
+                }
+                &.active {
+                    color: $primary-main;
+                    font-weight: 600;
+                }
+            }
+        }
+    }
+}
