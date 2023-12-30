@@ -4,18 +4,24 @@
       <div class="col-12">
         <div class="header-container">
           <h3 class="header-container__text">Products list</h3>
-          <button class="btn btn--md btn--primary">Add</button>
+          <button class="btn btn--md btn--primary" (click)="addProject()">
+            Add
+          </button>
         </div>
       </div>
     </div>
   </div>
-  <div class="row mt-3" *ngIf="products.length">
-    <div class="col-12">
-      <app-table
-        [columns]="productsColumn"
-        [rows]="products"
-        [actions]="productsActions"
-      ></app-table>
+
+  <ng-container *ngIf="!loading">
+    <div class="row mt-3" *ngIf="products.length">
+      <div class="col-12">
+        <app-table
+          [columns]="productsColumn"
+          [rows]="products"
+          [actions]="productsActions"
+          (actionClick)="onEmitAction($event)"
+        ></app-table>
+      </div>
     </div>
-  </div>
+  </ng-container>
 </div>

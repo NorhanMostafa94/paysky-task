@@ -19,4 +19,16 @@ export class ProductsService extends HttpService {
   getCategories(): Observable<any[]> {
     return this.get('products/categories', '');
   }
+
+  addProduct(product: Product): Observable<null> {
+    return this.post('products', product);
+  }
+
+  editProduct(product: Product): Observable<null> {
+    return this.put(`products/${product.id}`, product);
+  }
+
+  deleteProduct(id: number): Observable<null> {
+    return this.put(`products/${id}`, '');
+  }
 }

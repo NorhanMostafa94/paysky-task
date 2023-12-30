@@ -3,14 +3,21 @@ import { CommonModule } from '@angular/common';
 
 import { ProductsRoutingModule } from './products-routing.module';
 
-// Pages
-import { ProductsListComponent } from './pages/products-list/products-list.component';
+// Modules
+import { SharedModule } from '@app/shared/shared.module';
 import { TableModule } from '@app/shared/modules';
 
+// Pages
+import { ProductsListComponent } from './pages';
+
+// Components
+import { AddEditProductComponent } from './components';
+
 const PAGES = [ProductsListComponent];
+const COMPONENTS = [AddEditProductComponent];
 
 @NgModule({
-  declarations: [...PAGES],
-  imports: [CommonModule, ProductsRoutingModule, TableModule],
+  declarations: [...PAGES, ...COMPONENTS],
+  imports: [CommonModule, ProductsRoutingModule, TableModule, SharedModule],
 })
 export class ProductsModule {}

@@ -1,0 +1,74 @@
+<div class="add-edit-product container">
+  <div class="row">
+    <div class="login__form col-12 p-5">
+      <form [formGroup]="form" *ngIf="form">
+        <div>
+          <label class="d-block">Title</label>
+          <mat-form-field class="w-100">
+            <input
+              matInput
+              placeholder="Enter Title"
+              formControlName="title"
+              required
+            />
+          </mat-form-field>
+        </div>
+        <div>
+          <label class="d-block">Price</label>
+          <mat-form-field class="w-100">
+            <input
+              matInput
+              placeholder="Enter Price"
+              formControlName="price"
+              type="number"
+              required
+            />
+          </mat-form-field>
+        </div>
+        <div>
+          <label class="d-block">Description</label>
+          <mat-form-field class="w-100">
+            <textarea
+              matInput
+              placeholder="Enter Description"
+              formControlName="description"
+              required
+            ></textarea>
+          </mat-form-field>
+        </div>
+        <div>
+          <label class="d-block">Image</label>
+          <mat-form-field class="w-100">
+            <input
+              matInput
+              placeholder="Enter Image"
+              formControlName="image"
+              required
+            />
+          </mat-form-field>
+        </div>
+        <div>
+          <label class="d-block">Category</label>
+          <mat-form-field class="w-100">
+            <mat-select formControlName="category">
+              <mat-option
+                [value]="category"
+                *ngFor="let category of categoriesList"
+              >
+                {{ category }}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+        </div>
+
+        <div class="buttons d-flex align-items-center justify-content-end">
+          <button class="btn btn--text" (click)="close()">Cancel</button>
+          <button class="btn btn--md btn--primary" (click)="submit()">
+            <span *ngIf="mode === 'add'">Add</span>
+            <span *ngIf="mode === 'edit'">Edit</span>
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

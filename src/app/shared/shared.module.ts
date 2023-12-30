@@ -16,6 +16,7 @@ import {
 } from '@angular/material/snack-bar';
 import { MatListModule } from '@angular/material/list';
 import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatDialogModule } from '@angular/material/dialog';
 
 // Components
 import { HeaderComponent } from './components';
@@ -35,6 +36,7 @@ const ANGULAR_MATERIAL = [
   MatListModule,
   MatSnackBarModule,
   MatToolbarModule,
+  MatDialogModule,
 ];
 
 @NgModule({

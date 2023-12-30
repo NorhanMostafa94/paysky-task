@@ -16,9 +16,24 @@ export class HttpService {
   }
 
   protected post<T>(path: string, payload: any, params?: any): Observable<T> {
-    debugger
     return this.httpClientInst
       .post<T>(`${this._baseUrl}/${path}`, payload, {
+        params,
+      })
+      .pipe(catchError((error) => this.handleError(error)));
+  }
+
+  protected put<T>(path: string, payload: any, params?: any): Observable<T> {
+    return this.httpClientInst
+      .put<T>(`${this._baseUrl}/${path}`, payload, {
+        params,
+      })
+      .pipe(catchError((error) => this.handleError(error)));
+  }
+
+  protected delete<T>(path: string, params?: any): Observable<T> {
+    return this.httpClientInst
+      .delete<T>(`${this._baseUrl}/${path}`, {
         params,
       })
       .pipe(catchError((error) => this.handleError(error)));
