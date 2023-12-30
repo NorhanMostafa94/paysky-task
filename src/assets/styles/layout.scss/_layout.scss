@@ -1,0 +1,27 @@
+@import "abstracts/variables";
+
+::ng-deep.mat-drawer-inner-container {
+    display: flex !important;
+}
+.mat-sidenav-container {
+    background-color: $white;
+    height: 100%;
+    mat-list {
+        background: linear-gradient(180deg, #115c85 0%, #013c5c 100%);
+        width: 19.5rem;
+        height: 100%;
+        .mdc-list-item {
+            &__content {
+                .mdc-list-item__primary-text{
+                    color: $white !important;
+                    cursor: pointer;
+                }
+                &.active {
+                    border-inline-start-width: 3px;
+                    border-inline-start-style: solid;
+                    background-color: unset;
+                }
+            }
+        }
+    }
+}

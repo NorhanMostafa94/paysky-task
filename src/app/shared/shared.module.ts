@@ -6,32 +6,32 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatStepperModule } from '@angular/material/stepper';
 import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from '@angular/material/form-field';
-import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatIconModule } from '@angular/material/icon';
 import { MatSelectModule } from '@angular/material/select';
-import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
-
-// Components
-import { HeaderComponent } from './components';
-import { SnackbarComponent } from './components/snackbar/snackbar.component';
+import { MatSidenavModule } from '@angular/material/sidenav';
 import {
   MAT_SNACK_BAR_DATA,
   MatSnackBarModule,
 } from '@angular/material/snack-bar';
+import { MatListModule } from '@angular/material/list';
+
+// Components
+import { HeaderComponent } from './components';
+import { SnackbarComponent } from './components/snackbar/snackbar.component';
 
 const COMPONENTS = [HeaderComponent, SnackbarComponent];
 
 const ANGULAR_MATERIAL = [
+  MatSidenavModule,
   MatStepperModule,
   MatInputModule,
   MatFormFieldModule,
-  MatDatepickerModule,
   MatIconModule,
   MatSelectModule,
-  MatCheckboxModule,
   MatSnackBarModule,
   MatProgressSpinnerModule,
+  MatListModule,
 ];
 
 @NgModule({
