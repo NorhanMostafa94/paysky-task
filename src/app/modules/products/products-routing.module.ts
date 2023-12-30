@@ -10,7 +10,7 @@ const routes: Routes = [
     component: ProductsListComponent,
   },
   {
-    path: '',
+    path: '**',
     redirectTo: 'list',
     pathMatch: 'full',
   },

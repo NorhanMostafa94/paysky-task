@@ -10,7 +10,7 @@ const routes: Routes = [
     component: CategoriesListComponent,
   },
   {
-    path: '',
+    path: '**',
     redirectTo: 'list',
     pathMatch: 'full',
   },

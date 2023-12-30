@@ -4,7 +4,7 @@
   </button>
 
   <div class="d-flex align-items-center justify-content-end w-100">
-    <div>{{ user?.name?.firstname }} {{ user?.name?.lastname }}</div>
+    <div *ngIf="!isSideBarClosed">{{ user?.name?.firstname }} {{ user?.name?.lastname }}</div>
     <button mat-icon-button class="btn btn--sm" (click)="logout()">
       <mat-icon>logout</mat-icon>
     </button>

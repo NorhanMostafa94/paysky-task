@@ -1,6 +1,8 @@
-<div class="add-edit-product container">
+<div class="add-edit-product container p-5">
+  <h2 *ngIf="mode === 'add'">Add Product</h2>
+  <h2 *ngIf="mode === 'edit'">Edit Product</h2>
   <div class="row">
-    <div class="login__form col-12 p-5">
+    <div class="login__form col-12">
       <form [formGroup]="form" *ngIf="form">
         <div>
           <label class="d-block">Title</label>
