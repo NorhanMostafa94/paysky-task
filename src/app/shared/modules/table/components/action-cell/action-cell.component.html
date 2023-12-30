@@ -1,0 +1,15 @@
+<ng-container *ngFor="let action of actions; let i = index">
+  <span class="action">
+    <button
+      class="btn btn--sm"
+      [id]="i"
+      (click)="
+      actionClick.emit({ row, type: action.type })
+      "
+    >
+      <mat-icon class="d-flex align-items-center justify-content-center text-main">{{
+        action.icon
+      }}</mat-icon>
+    </button>
+  </span>
+</ng-container>

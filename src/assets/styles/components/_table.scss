@@ -1,0 +1,43 @@
+@import "abstracts/variables";
+
+.table {
+    border: 1px solid $border-main;
+    .mat-mdc-table {
+        thead {
+            tr {
+                .mat-mdc-header-cell {
+                    height: 2.75rem;
+                    background-color: $white;
+                    vertical-align: middle;
+                    font-size: 0.87rem;
+                    color: $text-main;
+                    font-weight: 500;
+                }
+            }
+        }
+        tr {
+            border: 0;
+            td.mat-mdc-cell {
+                border: 0;
+                vertical-align: middle;
+            }
+            &:nth-child(odd) {
+                background-color: $border-light;
+            }
+        }
+        tbody {
+            tr.mat-row {
+                height: 4.5rem;
+                &:not(:last-child) {
+                    border-bottom: 1px solid $border-main;
+                }
+                .mat-cell {
+                    font-size: 0.87rem;
+                    color: $text-dark;
+                    border: 1px solid $border-main;
+                    font-weight: 500;
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,42 @@
+<div class="table w-100 overflow-x-scroll">
+  <table mat-table [dataSource]="tableRows" class="mat-elevation-z8">
+    <ng-container
+      [matColumnDef]="column.model"
+      *ngFor="let column of dataColumns"
+    >
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>
+        {{ column.display }}
+      </th>
+      <td mat-cell *matCellDef="let row">
+        <ng-container [ngSwitch]="column.type">
+          <div *ngSwitchCase="'action'" class="flex justify-end">
+            <b5-action-cell
+              [row]="row"
+              [actions]="tableActions"
+              (actionClick)="actionClick.emit($event)"
+            ></b5-action-cell>
+          </div>
+          <!-- photo -->
+          <ng-container *ngSwitchCase="'photo'">
+            <b5-photo-cell [value]="row[column.model]"></b5-photo-cell>
+          </ng-container>
+
+          <!-- long text -->
+          <ng-container *ngSwitchCase="'long-text'">
+            <b5-long-text-cell [value]="row[column.model]"></b5-long-text-cell>
+          </ng-container>
+
+          <!-- Regular Cells -->
+          <ng-container *ngSwitchDefault>
+            <span>
+              {{ row[column.model] }}
+            </span>
+          </ng-container>
+        </ng-container>
+      </td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="tableColumnsHeaders"></tr>
+    <tr mat-row *matRowDef="let row; columns: tableColumnsHeaders"></tr>
+  </table>
+</div>
