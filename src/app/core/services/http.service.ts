@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
-import { Observable } from 'rxjs';
-import { environment } from 'src/environments/environment.development';
+import { environment } from '@env';
+import { Observable, catchError, throwError } from 'rxjs';
 
 export class HttpService {
   private _baseUrl: string;
@@ -10,10 +10,31 @@ export class HttpService {
   }
 
   protected get<T>(path: string, params: any): Observable<T> {
-    return this.httpClientInst.get<T>(`${this.baseUrl}/${path}`, { params });
+    return this.httpClientInst
+      .get<T>(`${this._baseUrl}/${path}`, { params })
+      .pipe(catchError((error) => this.handleError(error)));
   }
 
   protected post<T>(path: string, payload: any, params?: any): Observable<T> {
-    return this.httpClientInst.post<T>(`${this._baseUrl}/${path}`, payload, { params });
+    debugger
+    return this.httpClientInst
+      .post<T>(`${this._baseUrl}/${path}`, payload, {
+        params,
+      })
+      .pipe(catchError((error) => this.handleError(error)));
+  }
+
+  private handleError(err: any) {
+    let errorMessage: string;
+    if (err instanceof ErrorEvent) {
+      // A client-side or network error occurred. Handle it accordingly.
+      errorMessage = `An error occurred: ${err.error}`;
+    } else {
+      // The backend returned an unsuccessful response code.
+      // The response body may contain clues as to what went wrong,
+      errorMessage = `Something went wrong, try again later!`;
+    }
+
+    return throwError(err);
   }
 }

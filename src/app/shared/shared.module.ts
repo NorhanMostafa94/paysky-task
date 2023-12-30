@@ -15,6 +15,7 @@ import {
   MatSnackBarModule,
 } from '@angular/material/snack-bar';
 import { MatListModule } from '@angular/material/list';
+import { MatToolbarModule } from '@angular/material/toolbar';
 
 // Components
 import { HeaderComponent } from './components';
@@ -32,6 +33,8 @@ const ANGULAR_MATERIAL = [
   MatSnackBarModule,
   MatProgressSpinnerModule,
   MatListModule,
+  MatSnackBarModule,
+  MatToolbarModule,
 ];
 
 @NgModule({

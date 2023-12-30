@@ -1,0 +1,11 @@
+@import 'abstracts/variables';
+
+.login{
+    background-image: url('../../../../../assets/images/auth/login.jpg');
+    background-size: cover;
+    &__form{
+        background-color: $white;
+        border-radius: 1rem;
+        border: 1px solid $border-main;
+    }
+}

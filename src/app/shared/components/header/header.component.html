@@ -1,14 +1,12 @@
-<nav class="navbar navbar-expand-lg bg-white position-fixed w-100 z-3">
-  <div class="container-fluid">
-    <button mat-icon-button (click)="onToggleSideBar()">
-      <mat-icon> menu </mat-icon>
+<mat-toolbar class="bg-white">
+  <button class="btn btn--sm" mat-icon-button (click)="onToggleSideBar()">
+    <mat-icon> menu </mat-icon>
+  </button>
+
+  <div class="d-flex align-items-center justify-content-end w-100">
+    <div>{{ user?.name?.firstname }} {{ user?.name?.lastname }}</div>
+    <button mat-icon-button class="btn btn--sm" (click)="logout()">
+      <mat-icon>logout</mat-icon>
     </button>
-    <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
-      <ul class="navbar-nav">
-        <li class="nav-item">
-          <a class="nav-link">Profile</a>
-        </li>
-      </ul>
-    </div>
   </div>
-</nav>
+</mat-toolbar>

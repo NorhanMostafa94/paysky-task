@@ -1,5 +1,7 @@
 <mat-sidenav-container>
-  <mat-sidenav #sidenav mode="side" [opened]="true">
+  <mat-sidenav #sidenav mode="side" [opened]="true" 
+  fixedInViewport="fixed"
+  >
     <mat-list role="list" class="d-flex flex-column list mat-list">
       <mat-list-item
         *ngFor="let route of ROUTES"
@@ -13,7 +15,7 @@
   <mat-sidenav-content>
     <main class="d-flex flex-column">
       <app-header (toggleSideBar)="sidenav.toggle()"></app-header>
-      <div class="container">
+      <div class="container px-5">
         <router-outlet></router-outlet>
       </div>
     </main>
