@@ -7,7 +7,10 @@
         *ngFor="let route of ROUTES"
         class="list-item"
         role="listitem"
-        >{{ route.title }}</mat-list-item
+        [routerLink]="[route.path]"
+        routerLinkActive="active"
+        >
+        {{ route.title }}</mat-list-item
       >
     </mat-list>
   </mat-sidenav>

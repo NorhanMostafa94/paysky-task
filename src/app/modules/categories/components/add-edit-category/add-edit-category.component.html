@@ -1,0 +1,27 @@
+<div class="add-edit-product container">
+  <div class="row">
+    <div class="login__form col-12 p-5">
+      <form [formGroup]="form" *ngIf="form">
+        <div>
+          <label class="d-block">Name</label>
+          <mat-form-field class="w-100">
+            <input
+              matInput
+              placeholder="Enter Title"
+              formControlName="name"
+              required
+            />
+          </mat-form-field>
+        </div>
+
+        <div class="buttons d-flex align-items-center justify-content-end">
+          <button class="btn btn--text" (click)="close()">Cancel</button>
+          <button class="btn btn--md btn--primary" (click)="submit()">
+            <span *ngIf="mode === 'add'">Add</span>
+            <span *ngIf="mode === 'edit'">Edit</span>
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,28 @@
+<div class="products-list">
+    <div class="container">
+      <div class="row">
+        <div class="col-12">
+          <div class="header-container">
+            <h3 class="header-container__text">Categories list</h3>
+            <button class="btn btn--md btn--primary" (click)="addCategory()">
+              Add
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  
+    <ng-container *ngIf="!loading">
+      <div class="row mt-3" *ngIf="categories.length">
+        <div class="col-12">
+          <app-table
+            [columns]="categoriesColumn"
+            [rows]="categories"
+            [actions]="categoriesActions"
+            (actionClick)="onEmitAction($event)"
+          ></app-table>
+        </div>
+      </div>
+    </ng-container>
+  </div>
+  

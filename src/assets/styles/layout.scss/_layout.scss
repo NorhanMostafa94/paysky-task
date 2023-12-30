@@ -16,11 +16,12 @@
                     color: $white !important;
                     cursor: pointer;
                 }
-                &.active {
-                    border-inline-start-width: 3px;
-                    border-inline-start-style: solid;
-                    background-color: unset;
-                }
+            }
+            &.active {
+                border-inline-start-width: 3px;
+                border-inline-start-style: solid;
+                border-inline-start-color: $white;
+                background-color: #013c5c;
             }
         }
     }

@@ -5,4 +5,8 @@ export const MAIN_ROUTES: MainRoutes[] = [
     title: 'Products',
     path: '/products',
   },
+  {
+    title: 'Categories',
+    path: '/categories',
+  },
 ];
